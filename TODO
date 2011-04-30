@@ -1,5 +1,6 @@
 A rough set of notes for things that need to be implemented; patches welcome!
 
+Makefile to install the scripts into the proper location
 init scripts to run all counters on boot
 
 file_system_reporter.sh
