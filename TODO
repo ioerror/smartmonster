@@ -1,0 +1,17 @@
+A rough set of notes for things that need to be implemented; patches welcome!
+
+init scripts to run all counters on boot
+
+file_system_reporter.sh
+  Add MBR and other Grub
+    dd if=/dev/sda of=/tmp/mbr bs=512
+
+Fetch S.M.A.R.T. run time
+  run_time_counter.sh
+eg:
+smartctl -A /dev/sda|grep Power_On_Hours
+9 Power_On_Hours          0x0032   095   095   000    Old_age   Always       -       194557723546097
+
+Hook boot, suspend, and shutdown events
+  /etc/rcS.d/smartmonster - boot/startup hook
+  /etc/acpi or gnome-power-preferences - suspend and shutdown events
