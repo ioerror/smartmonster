@@ -5,6 +5,7 @@ init scripts to run all counters on boot
 file_system_reporter.sh
   Add MBR and other Grub
     dd if=/dev/sda of=/tmp/mbr bs=512
+    dd if=/dev/sda bs=512 count=1 2>/dev/null | sha1sum
 
 Fetch S.M.A.R.T. run time
   run_time_counter.sh
