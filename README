@@ -2,5 +2,23 @@
 
 S.M.A.R.T. Monster Only Notices Surreptitious Tampering Events Retroactively
 
-An anti-forensic reboot, disk access, and basic tamper detector
+"An anti-forensic reboot, disk access, and basic tamper detector"
 
+This set of scripts is written with the express purpose of detecting changes in
+the bootable file system, with the unencrypted block device used for booting,
+with S.M.A.R.T. data provided by your drives, and other interesting data
+points.
+
+This software assumes that your /boot is unencrypted and that everything else
+is encrypted with full disk encryption; it also assumes that your hard disk is
+a spinning platter with S.M.A.R.T. support - this may also function with SSD
+storage devices but is as of yet untested.
+
+We also assume that you layer your file system encryption with something like
+eCryptFS for use after the full disk encryption has been unlocked. Anything
+less will allow an attacker to simply log your main encryption key and leak it
+through a covert channel, such as attempting to join a wireless network with
+your key as the ESSID. Detection of such an event after the fact may be too
+late.
+
+This is of course entirely imperfect and still worth exploring.
