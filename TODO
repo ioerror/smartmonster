@@ -17,3 +17,4 @@ smartctl -A /dev/sda|grep Power_On_Hours
 Hook boot, suspend, and shutdown events
   /etc/rcS.d/smartmonster - boot/startup hook
   /etc/acpi or gnome-power-preferences - suspend and shutdown events
+    /etc/pm/sleep.d/ - probably useful for most users
